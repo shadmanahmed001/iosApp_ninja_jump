@@ -15,10 +15,11 @@
 		9D1A858A1E73408500102F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85891E73408500102F39 /* Assets.xcassets */; };
 		9D1A858D1E73408500102F39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A858B1E73408500102F39 /* LaunchScreen.storyboard */; };
 		9D1A85951E73588E00102F39 /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85941E73588E00102F39 /* GameScene2.sks */; };
+		E7D72BA41E75F19400E9AA8B /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E7D72BA31E75F19400E9AA8B /* 04B_19__.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D0CAA001E736EC5000CA434 /* randomFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = randomFunction.swift; sourceTree = "<group>"; };
+		9D0CAA001E736EC5000CA434 /* randomFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = randomFunction.swift; path = ../randomFunction.swift; sourceTree = "<group>"; };
 		9D1A85791E73408500102F39 /* Ninja Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Jump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1A857C1E73408500102F39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D1A85821E73408500102F39 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		9D1A858C1E73408500102F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1A858E1E73408500102F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1A85941E73588E00102F39 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
+		E7D72BA31E75F19400E9AA8B /* 04B_19__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = 04B_19__.TTF; path = ../04B_19__.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,6 @@
 		9D1A85701E73408500102F39 = {
 			isa = PBXGroup;
 			children = (
-				9D0CAA001E736EC5000CA434 /* randomFunction.swift */,
 				9D1A857B1E73408500102F39 /* Ninja Jump */,
 				9D1A857A1E73408500102F39 /* Products */,
 			);
@@ -61,6 +62,8 @@
 		9D1A857B1E73408500102F39 /* Ninja Jump */ = {
 			isa = PBXGroup;
 			children = (
+				9D0CAA001E736EC5000CA434 /* randomFunction.swift */,
+				E7D72BA31E75F19400E9AA8B /* 04B_19__.TTF */,
 				9D1A857C1E73408500102F39 /* AppDelegate.swift */,
 				9D1A85821E73408500102F39 /* GameScene.swift */,
 				9D1A85841E73408500102F39 /* GameViewController.swift */,
@@ -135,6 +138,7 @@
 			files = (
 				9D1A85881E73408500102F39 /* Main.storyboard in Resources */,
 				9D1A858A1E73408500102F39 /* Assets.xcassets in Resources */,
+				E7D72BA41E75F19400E9AA8B /* 04B_19__.TTF in Resources */,
 				9D1A858D1E73408500102F39 /* LaunchScreen.storyboard in Resources */,
 				9D1A85951E73588E00102F39 /* GameScene2.sks in Resources */,
 			);

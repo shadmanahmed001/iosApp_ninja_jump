@@ -49,6 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLbl.text = "\(score)"
         scoreLbl.fontSize = 50
         scoreLbl.zPosition = 5
+        scoreLbl.fontName = "04b_19"
         self.addChild(scoreLbl)
         
         Ground = SKSpriteNode(imageNamed: "Ground")
@@ -96,6 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createBTN() {
         restartBTN = SKSpriteNode(color: SKColor.blue, size: CGSize(width:200,height:100)
         )
+//        restartBTN.setScale(100)
         restartBTN.position = CGPoint(x: 0, y: 0)
         restartBTN.zPosition = 6
         self.addChild(restartBTN)
@@ -140,6 +142,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else {
             if died == true {
                 createBTN()
+                enumerateChildNodes(withName: "WallPair", using: <#T##(SKNode, UnsafeMutablePointer<ObjCBool>) -> Void#>)
             }
             else {
                 Ghost.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
@@ -173,7 +176,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreNode.color = SKColor.white
         
         wallPair = SKNode()
-        
+        wallPair.name = "WallPair"
         
         let topWall = SKSpriteNode(imageNamed: "Wall")
         let btmWall = SKSpriteNode(imageNamed: "Wall")
@@ -206,7 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         wallPair.zPosition = 1
         
-        var randomPosition = CGFloat.random(min: -200, max: 200)
+        let randomPosition = CGFloat.random(min: -200, max: 200)
         
         wallPair.position.y = wallPair.position.y + randomPosition
         
