@@ -44,6 +44,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createScene() {
         self.physicsWorld.contactDelegate = self
         
+        for i in 1...3 {
+            let background = SKSpriteNode(imageNamed: "Background")
+            background.anchorPoint = CGPoint.zero
+            let z = CGFloat(i) * self.frame.width
+            background.position = CGPoint(x: z, y: 0)
+            background.name = "background"
+            background.size = (self.view?.bounds.size)!
+            self.addChild(background)
+        }
         
         scoreLbl.position = CGPoint(x: 0, y: 500)
         scoreLbl.text = "\(score)"
@@ -54,7 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         Ground = SKSpriteNode(imageNamed: "Ground")
         Ground.setScale(0.75)
-        Ground.position = CGPoint(x: 0, y: -600)
+        Ground.position = CGPoint(x: 0, y: -330)
         
         Ground.physicsBody = SKPhysicsBody(rectangleOf: Ground.size)
         Ground.physicsBody?.categoryBitMask = PhysicsCategory.Ground
@@ -95,8 +104,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createBTN() {
-        restartBTN = SKSpriteNode(color: SKColor.blue, size: CGSize(width:200,height:100)
-        )
+        restartBTN = SKSpriteNode(imageNamed: "RestartBtn")
+        restartBTN.size = CGSize(width: 200, height: 100)
 //        restartBTN.setScale(100)
         restartBTN.position = CGPoint(x: 0, y: 0)
         restartBTN.zPosition = 6
@@ -111,10 +120,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
              score += 1
             scoreLbl.text = "\(score)"
         }
-        if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.wall || firstBody.categoryBitMask == PhysicsCategory.wall && secondBody.categoryBitMask == PhysicsCategory.Ghost {
-            died = true
+        else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.wall || firstBody.categoryBitMask == PhysicsCategory.wall && secondBody.categoryBitMask == PhysicsCategory.Ghost {
+            
+            enumerateChildNodes(withName: "WallPair", using: { (node, error) in
+                node.speed = 0
+                self.removeAllActions()
+            })
+            if died == false{
+                died = true
+                createBTN()
         }
     }
+        
+        else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Ground || firstBody.categoryBitMask == PhysicsCategory.Ground && secondBody.categoryBitMask == PhysicsCategory.Ghost {
+            
+            enumerateChildNodes(withName: "WallPair", using: { (node, error) in
+                node.speed = 0
+                self.removeAllActions()
+            })
+            if died == false{
+                died = true
+                createBTN()
+            }
+        }
+
+}
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if gameStarted == false {
@@ -142,7 +172,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else {
             if died == true {
                 createBTN()
-                enumerateChildNodes(withName: "WallPair", using: <#T##(SKNode, UnsafeMutablePointer<ObjCBool>) -> Void#>)
             }
             else {
                 Ghost.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
@@ -222,6 +251,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: CFTimeInterval) {
-        
+        if gameStarted == true{
+            if died == false{
+                enumerateChildNodes(withName: "background", using: { (node, error) in
+                    let background = node as! SKSpriteNode
+                    let d = CGFloat(background.position.x-25)
+                    let v = CGFloat(background.position.y)
+                    background.position = CGPoint(x: d, y: v)
+                    print("bg image size is \(background.size)")
+//                    print("scene frame here \(self.scene!.frame)")
+                    print("bg position before regenration \(background.position)")
+                    
+                    if background.position.x <= -background.size.width {
+                        print("reached last fucntion")
+
+                        background.position = CGPoint(x:background.position.x + background.size.width, y:background.position.y)
+                        print("bg position after regenration \(background.position)")
+
+                    }
+                })
+            }
+        }
     }
 }
