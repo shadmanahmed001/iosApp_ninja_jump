@@ -114,7 +114,7 @@
 				TargetAttributes = {
 					9D1A85781E73408500102F39 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GRGJW6B5ZE;
+						DevelopmentTeam = PKHH358N43;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -283,11 +283,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GRGJW6B5ZE;
+				DEVELOPMENT_TEAM = PKHH358N43;
 				INFOPLIST_FILE = "Ninja Jump/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nishantpatel.Cold-Call";
+				PRODUCT_BUNDLE_IDENTIFIER = shadmanahmed.info.snadad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,11 +298,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GRGJW6B5ZE;
+				DEVELOPMENT_TEAM = PKHH358N43;
 				INFOPLIST_FILE = "Ninja Jump/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nishantpatel.Cold-Call";
+				PRODUCT_BUNDLE_IDENTIFIER = shadmanahmed.info.snadad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
