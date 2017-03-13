@@ -46,14 +46,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for i in 1...3 {
             let background = SKSpriteNode(imageNamed: "Background")
-            background.anchorPoint = CGPoint.zero
+//            background.anchorPoint = CGPoint.zero
             let z = CGFloat(i) * self.frame.width
             background.position = CGPoint(x: z, y: 0)
             background.name = "background"
-            background.size = (self.view?.bounds.size)!
+//            background.size = (self.view?.bounds.size)!
+            
+//            background.size = CGSize(width:self.scene!.size.width/2, height:self.scene!.size.height)
+            background.size = CGSize(width:700, height:self.scene!.size.height)
             self.addChild(background)
+
+//                print("yeeeee")
+//            }
+//            else{
+//                print("naaaaay")
+//            }
+
         }
-        
+        print("self view bounds size\(self.view!.bounds.size)")
         scoreLbl.position = CGPoint(x: 0, y: 500)
         scoreLbl.text = "\(score)"
         scoreLbl.fontSize = 50
